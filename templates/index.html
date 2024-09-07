@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Main Page {% endblock title %}
+{% block content %}
+
+<h2>Categories</h2>
+{%for ctg in categories%}
+{{ctg.name}}<br>
+{%endfor%}
+<hr>
+<h2>main_news</h2>
+{%for article in main_news%}
+{{article.title}} | {{article.category}} | {{article.created_at}}<br>
+{%endfor%}
+
+
+{% endblock content %}
