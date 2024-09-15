@@ -36,3 +36,12 @@ class Article(BaseModel):
     
     def __str__(self):
         return f"{self.id} {self.title}"
+
+class Contact(BaseModel):
+    name = models.CharField(max_length=150)
+    email = models.EmailField()
+    message = models.TextField()
+
+
+    def __str__(self):
+        return self.name

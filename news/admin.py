@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category,Tags,Article
+from .models import Category,Tags,Article,Contact
 # Register your models here.
 
 @admin.register(Category)
@@ -16,3 +16,7 @@ class ArcticleAdmin(admin.ModelAdmin):
     readonly_fields = ('views',)
 
     filter_horizontal = ('tags',)
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('id','name','email')
